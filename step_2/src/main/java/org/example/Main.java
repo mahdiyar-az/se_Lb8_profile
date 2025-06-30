@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        GraphAPI graph = new JungGraphAdapter();
+        GraphAPI graph = new JGraphTAdapter();
 
         graph.addVertex(1);
         graph.addVertex(2);
