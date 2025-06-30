@@ -1,14 +1,11 @@
 package org.example.graphTravelers;
 
-
-import edu.uci.ics.jung.graph.SparseMultigraph;
-
 import java.util.*;
 
 public class BfsGraphTraverser implements Traverser {
-    private final SparseMultigraph<Integer, String> graph;
+    private final GraphAPI graph;
 
-    public BfsGraphTraverser(SparseMultigraph<Integer, String> graph) {
+    public BfsGraphTraverser(GraphAPI graph) {
         this.graph = graph;
     }
 
@@ -25,7 +22,6 @@ public class BfsGraphTraverser implements Traverser {
             Integer vertex = queue.poll();
             result.add(vertex);
 
-            // Get neighbors and sort them for deterministic output
             List<Integer> neighbors = new ArrayList<>(graph.getNeighbors(vertex));
             neighbors.sort(Comparator.naturalOrder());
 
